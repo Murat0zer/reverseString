@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 
+
 @Controller
 @SpringBootApplication
 public class DemoApplication {
     @ResponseBody
-		@GetMapping("/reverse")
+		@GetMapping("/")
     public String reverse(@RequestParam(value="input", required=false, defaultValue="Hello World") String input, Model model) {
 			String reverse = new StringBuilder(input).reverse().toString();
-			model.addAttribute("reverseString", reverse);
+			model.addAttribute("reverse", reverse);
       return "reverse";
     }
 
