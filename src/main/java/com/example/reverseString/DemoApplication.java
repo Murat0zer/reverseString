@@ -14,7 +14,7 @@ public class DemoApplication {
     public String reverse(@RequestParam(value="input", required=false, defaultValue="Hello World") String input, Model model) {
 			String reverse = new StringBuilder(input).reverse().toString();
 			model.addAttribute("reverseString", reverse);
-      return "revese";
+      return "reverse";
     }
 
     public static void main(String[] args) {
