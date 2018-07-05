@@ -8,8 +8,9 @@ import org.springframework.ui.Model;
 
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
-		@RequestMapping("/")
+    @RequestMapping
     public String reverse(@RequestParam(value="input", required=false, defaultValue="Hello World") String input, Model model) {
 			String reverse = new StringBuilder(input).reverse().toString();
 			model.addAttribute("reverse", reverse);
