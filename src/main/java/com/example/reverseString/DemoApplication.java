@@ -10,9 +10,9 @@ import org.springframework.stereotype.*;
 @RequestMapping("/")
 public class DemoApplication {
     @ResponseBody
-		@RequestMapping(value="/{string}", method=RequestMethod.GET)
-    public String reverse(@PathVariable String string) {
-      return string;
+    public String reverse(@RequestParam(value="param1", required=true) String param1) {
+      return new StringBuilder(param1).reverse().toString()
+;
     }
 
     public static void main(String[] args) {
