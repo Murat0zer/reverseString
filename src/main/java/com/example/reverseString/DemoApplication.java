@@ -7,16 +7,9 @@ import org.springframework.stereotype.*;
 import org.springframework.ui.Model;
 
 
-@Controller
+
 @SpringBootApplication
-public class DemoApplication {
-    @ResponseBody
-		@GetMapping("/")
-    public String reverse(@RequestParam(value="input", required=false, defaultValue="Hello World") String input, Model model) {
-			String reverse = new StringBuilder(input).reverse().toString();
-			model.addAttribute("reverse", reverse);
-      return "reverse";
-    }
+public class DemoApplication {	
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
