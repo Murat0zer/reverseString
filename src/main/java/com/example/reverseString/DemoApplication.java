@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 @SpringBootApplication
 public class DemoApplication {
     @ResponseBody
-		@RequestMapping("/")
+		@GetMapping("/")
     public String reverse(@RequestParam(value="input", required=false, defaultValue="Hello World") String input, Model model) {
 			String reverse = new StringBuilder(input).reverse().toString();
 			model.addAttribute("reverseString", reverse);
