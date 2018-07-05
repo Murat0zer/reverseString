@@ -7,9 +7,9 @@ import org.springframework.stereotype.*;
 
 @Controller
 @SpringBootApplication
-@RequestMapping("/")
 public class DemoApplication {
     @ResponseBody
+		@RequestMapping("/")
     public String reverse(@RequestParam(value="param1", required=true) String param1) {
       return new StringBuilder(param1).reverse().toString()
 ;
