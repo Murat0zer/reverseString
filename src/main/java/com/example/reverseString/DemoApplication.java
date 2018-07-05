@@ -7,12 +7,12 @@ import org.springframework.stereotype.*;
 
 @Controller
 @SpringBootApplication
+@RequestMapping("/")
 public class DemoApplication {
-
-    @RequestMapping("/")
     @ResponseBody
-    String home() {
-      return "Hello World!";
+		@RequestMapping(value="/{string}", method=RequestMethod.GET)
+    public String reverse(@PathVariable String string) {
+      return string;
     }
 
     public static void main(String[] args) {
